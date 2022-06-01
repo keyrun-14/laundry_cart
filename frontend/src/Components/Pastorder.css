@@ -1,0 +1,55 @@
+.pastorder-full-container{
+    position: absolute;
+    top: 3em;
+    left: 5em;
+}
+.table-order-main-header{
+   
+    display: flex;
+    justify-content: space-between; 
+    height: 3em;
+
+}
+.table-create-search{
+    margin-top: 1.5%;
+    display: flex;
+}
+.search-bar{
+    margin: 0;
+}
+.orders-table-header{
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: #383737;
+    padding:0 1em;
+    color: #FFFFFF;
+   
+}
+.create-button{
+    color: #5861AE;
+    background-color: #FFFFFF;
+    border: 1px solid #5861AE;
+    width: 8em;
+    height: 2em;
+  
+}
+.details-container1{
+    width: 90vw;
+    padding:0 1em;
+    display: flex;
+    justify-content: space-between;
+    background-color: #EAEDF0;
+   
+}
+.details-container2{
+    width: 90vw;
+    padding:0 1em;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+   
+}
+h4,p{
+    text-align: left;
+}
