@@ -13,16 +13,15 @@ export default function Summary({
 
   var totalPrice = 0;
   var totalQuantity = 0;
-  {
-    Object.keys(customerorder).map((item) => {
-      if (customerorder[item].quantity > 0) {
-        var singleproductPrice =
-          customerorder[item].quantity * customerorder[item].totalPrice;
-        totalPrice += singleproductPrice;
-        totalQuantity += parseInt(customerorder[item].quantity);
-      }
-    });
-  }
+
+  Object.keys(customerorder).map((item) => {
+    if (customerorder[item].quantity > 0) {
+      var singleproductPrice =
+        customerorder[item].quantity * customerorder[item].totalPrice;
+      totalPrice += singleproductPrice;
+      totalQuantity += parseInt(customerorder[item].quantity);
+    }
+  });
 
   const handleConfirm = () => {
     if (location === "store location") {
@@ -88,7 +87,7 @@ export default function Summary({
             </div>
             <div className="summary__storeselector__phone">
               <h3>Phone no:</h3>
-              {location == "store location" ? (
+              {location === "store location" ? (
                 <p>-</p>
               ) : (
                 <>
@@ -150,7 +149,7 @@ export default function Summary({
               onClick={selectAddress}
               className="summary__address summary__address--active"
             >
-              <img src="images/tick.svg"></img>
+              <img src="images/tick.svg" alt="tick"></img>
             </div>
           </div>
 

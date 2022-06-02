@@ -1,6 +1,6 @@
 .summary__conatiner {
-  position: absolute;
-  top: -50px;
+  position: fixed;
+  top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0;
@@ -9,7 +9,7 @@
 .summary__leftdiv {
   position: absolute;
   background: white;
-  margin-left: calc(100vw - 1008px);
+  margin-left: calc(100vw - 926px);
   width: 926px;
   height: 100vh;
 }

@@ -31,7 +31,7 @@ export default function Home() {
           <Link className="linkdiv" to={"/createorder"}>
             <img src="images/more.svg"></img>
           </Link>
-          <Link className="linkdiv" to={"#"}>
+          <Link className="linkdiv" to={"/pastorders"}>
             <i class="fa-solid fa-list"></i>
           </Link>
         </nav>
