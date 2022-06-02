@@ -84,7 +84,9 @@ app.post("/login", async (request, response) => {
           response.status(400).send("Error in token Generation");
           response.end();
         } else {
-          response.status(200).send({ status: "sucess", token: Token });
+          response
+            .status(200)
+            .send({ status: "sucess", token: Token, Name: userExist.Name });
           //console.log(Token);
           response.end();
         }
