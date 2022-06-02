@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "./PastOrderSummary.css";
+import CancelAlert from "../CancelAlert";
 
 export default function PastOrderSummary({
   isVisible,
   // handleProceed,
   // handlesucess,
   customerorder,
-  changeHandler
+  changeHandler,
+  setVisible
   // setShow,
   // setsucess,
 }) {
+  const [popup,setPopup]=useState(false)
   // const [location, setLocation] = useState("store location");
 
   // var totalPrice = 0;
@@ -51,9 +54,14 @@ export default function PastOrderSummary({
   //   const address = document.getElementsByClassName("summary__address");
   //   address[0].classList.toggle("summary__address--active");
   // };
+  const alert_popup=()=>{
+    setPopup(true)
+    setVisible(false)
+  }
 
   if (isVisible) {
-    return (
+    return ( 
+    <>
       <div className="summary__conatiner">
         <div className="summary__leftdiv">
           <header className="summary__header">
@@ -96,6 +104,13 @@ export default function PastOrderSummary({
               )}
             </div> */}
           </nav>
+          <div className="multi_stepper">
+            <div className="multi-stepper-tags"></div><span>pickedup</span>
+            <div className="multi-stepper-tags"></div><span>washed</span>
+            <div className="multi-stepper-tags"></div><span>ironed</span>
+            <div className="multi-stepper-tags"></div><span>delivered</span>
+          
+          </div>
 
           <div className="summary__orderdetails__container">
             <div className="summary__heading">
@@ -154,10 +169,12 @@ export default function PastOrderSummary({
           </div>
 
           <footer className="summary__footer">
-            <button >Cancel</button>
+            <button onClick={alert_popup} className="cancel" >Cancel Order</button>
           </footer>
         </div>
       </div>
+       <CancelAlert popup={popup} />
+       </>
     );
   } else {
     return null;
