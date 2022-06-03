@@ -121,8 +121,8 @@ app.get("/getOrder", authtoken, async (req, res) => {
       res.status(400).send("user not exist");
       res.end();
     }
-    const result = await orders.find({userId:req.user.userId});
-    console.log(result,".......")
+    const result = await orders.find({ userId: req.user.userId });
+
     res.status(200).json(result);
   } catch (err) {
     res.status(500).send("server error");
@@ -143,6 +143,18 @@ app.post("/order", (req, res) => {
       res.json({
         success: true,
         message: "order added",
+      });
+    }
+  });
+});
+app.post("/deleteOrder", authtoken, (req, res) => {
+  orders.findByIdAndDelete(req.body.orderId, (err, docs) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json({
+        success: true,
+        message: "order deleted",
       });
     }
   });
