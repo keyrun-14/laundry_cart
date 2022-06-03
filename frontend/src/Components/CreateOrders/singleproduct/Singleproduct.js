@@ -43,7 +43,6 @@ export default function Singleproduct({
   if (bleach) {
     washtype += "bleach,";
   }
-  console.log(washtype);
 
   var totalPrice = 0;
   if (wash) {

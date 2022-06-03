@@ -38,7 +38,7 @@ export default function Home() {
               <div className="home__header__userimage">
                 <img src="https://lh3.googleusercontent.com/ogw/ADea4I7Jg1mUhjHMgDuy34nUCvmABKEPG3wOr4p2SzlOsg=s32-c-mo"></img>
               </div>
-              <h1>Naveen</h1>
+              <h1>{localStorage.getItem("Name")}</h1>
             </div>
           </header>
           <nav className="home__navbar">

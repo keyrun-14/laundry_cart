@@ -8,6 +8,7 @@ const ordersSchema = new mongoose.Schema({
   totalQuantity: Number,
   totalPrice: Number,
   location: String,
+  Address: String,
   Shirts: {
     name: String,
     washtype: String,

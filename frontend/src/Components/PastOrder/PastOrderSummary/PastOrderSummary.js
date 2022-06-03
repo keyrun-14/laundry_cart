@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./PastOrderSummary.css";
 
 export default function PastOrderSummary({
   isVisible,
-  customerorder,
   changeHandler,
   alert_popup,
   id,
 }) {
-  // console.log(id);
-  // console.log(customerorder._id);
-  // id = { orderId: customerorder._id };
+  const [customerorder, setcustomerorder] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/order/${id}`, {
+      method: "GET",
+      headers: {
+        authtoken: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setcustomerorder(data));
+  });
+
   if (isVisible) {
     return (
       <>
@@ -105,6 +114,7 @@ export default function PastOrderSummary({
                 className="summary__address summary__address--active"
               >
                 <img src="images/tick.svg"></img>
+                <p>{customerorder.Address}</p>
               </div>
             </div>
 

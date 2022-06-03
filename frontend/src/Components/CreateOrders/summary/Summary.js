@@ -34,6 +34,7 @@ export default function Summary({
         location: location,
         totalPrice: totalPrice,
         totalQuantity: totalQuantity,
+        Address: `${userDetails.State} ${userDetails.District} ${userDetails.Adress} ${userDetails.Pincode}`,
       };
       setsucess(true);
       setShow(false);

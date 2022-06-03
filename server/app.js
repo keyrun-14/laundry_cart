@@ -148,11 +148,9 @@ app.post("/order", (req, res) => {
   });
 });
 app.delete("/deleteOrder/:orderId", authtoken, (req, res) => {
-  console.log((req.params.orderId))
- 
   // const deletedorder=orders.findById(req.params.orderId)
   // console.log(deletedorder,"hhh")
-  orders.findByIdAndDelete((req.params.orderId), (err, docs) => {
+  orders.findByIdAndDelete(req.params.orderId, (err, docs) => {
     if (err) {
       res.send(err);
     } else {
@@ -160,6 +158,16 @@ app.delete("/deleteOrder/:orderId", authtoken, (req, res) => {
         success: true,
         message: "order deleted",
       });
+    }
+  });
+});
+app.get("/order/:orderId", authtoken, (req, res) => {
+  // console.log(req.params.orderId);
+  orders.findById(req.params.orderId, (err, docs) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(docs);
     }
   });
 });

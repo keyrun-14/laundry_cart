@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./NoCustomer.css";
 
 const NoCustomer = () => {
@@ -15,7 +16,9 @@ const NoCustomer = () => {
       </div>
       <div className="middle-of-orders">
         <h3>No order Available</h3>
-        <button className="btn-1">Create</button>
+        <Link to={"/createorder"}>
+          <button className="btn-1">Create</button>
+        </Link>
       </div>
     </div>
   );

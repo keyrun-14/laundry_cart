@@ -25,7 +25,6 @@ export default function () {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("Name", res.data.Name);
         alert("Sign in Successfull");
-        console.log(res.data.token);
       })
       .catch((e) => {
         alert("login failed");

@@ -38,7 +38,6 @@ export default function Createorder() {
       .then((resp) => resp.json())
       .then((data) => setuserData(data));
   };
-  console.log(userData);
 
   React.useEffect(() => {
     fetch("http://localhost:5000")

@@ -7,7 +7,7 @@ import PastOrderSummary from "../PastOrderSummary/PastOrderSummary";
 
 import Home from "../../Home/Home";
 import NoCustomer from "../Noorderlist/NoCustomer";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Pastorder = () => {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ const Pastorder = () => {
   const [Visible, setVisible] = React.useState(false);
   const [popup, setPopup] = React.useState(false);
   const [orderId, setorderId] = React.useState("");
+  const [counter, setCounter] = React.useState(0);
 
   const alert_popup = (id) => {
     setPopup(true);
@@ -32,10 +33,24 @@ const Pastorder = () => {
       .then((res) => res.json())
       .then((datas) => setData(datas));
   };
+  const deleteOrder = () => {
+    setCounter(counter + 1);
+    fetch("http://localhost:5000/deleteOrder/" + orderId, {
+      method: "DELETE",
+      headers: {
+        authtoken: localStorage.getItem("token"),
+      },
+      body: {
+        orderId: orderId,
+      },
+    });
+    setPopup(false);
+    navigate("/pastorders");
+  };
 
   useEffect(() => {
     gettingData();
-  }, []);
+  }, [counter]);
 
   var totalquantity = 0;
 
@@ -49,19 +64,7 @@ const Pastorder = () => {
     setVisible(!Visible);
     setorderId(id);
   };
-  const deleteOrder = () => {
-    fetch("http://localhost:5000/deleteOrder/"+orderId, {
-      method: "DELETE",
-      headers: {
-        authtoken: localStorage.getItem("token"),
-      },
-      body: {
-        orderId: orderId,
-      }
-    
-    }).then(()=>window.location.href("/pastorders"));
-    
-  };
+
   return (
     <>
       <Home />
@@ -78,7 +81,9 @@ const Pastorder = () => {
               </div>
               <div className="table-create-search">
                 <div>
-                  <button className="create-button">Create</button>
+                  <Link to={"/createorder"}>
+                    <button className="create-button">Create</button>
+                  </Link>
                 </div>
                 <div className="search-bar">
                   <i class="fa-solid fa-magnifying-glass"></i>
@@ -160,18 +165,17 @@ const Pastorder = () => {
                       </p>
                     </div>
                   </>
-                  <PastOrderSummary
-                    id={ele._id}
-                    alert_popup={alert_popup}
-                    isVisible={Visible}
-                    setVisible={setVisible}
-                    customerorder={ele}
-                    changeHandler={changeHandler}
-                  />
                 </div>
               );
             })}
           </>
+          <PastOrderSummary
+            id={orderId}
+            alert_popup={alert_popup}
+            isVisible={Visible}
+            setVisible={setVisible}
+            changeHandler={changeHandler}
+          />
         </div>
       )}{" "}
       <CancelAlert
