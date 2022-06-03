@@ -115,7 +115,13 @@ export default function PastOrderSummary({
             </footer>
           </div>
         </div>
+<<<<<<< HEAD
       </>
+=======
+      </div>
+       <CancelAlert popup={popup}  />
+       </>
+>>>>>>> 7420d8df368b72ac7699cbec98b38e24ed002362
     );
   } else {
     return null;
