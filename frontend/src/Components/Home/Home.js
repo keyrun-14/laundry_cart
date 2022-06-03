@@ -34,7 +34,7 @@ export default function Home() {
                 <p>Career</p>
               </div>
             </div>
-            <div className="home__header__userinfo">
+            <div onClick={logouthandler} className="home__header__userinfo">
               <div className="home__header__userimage">
                 <img src="https://lh3.googleusercontent.com/ogw/ADea4I7Jg1mUhjHMgDuy34nUCvmABKEPG3wOr4p2SzlOsg=s32-c-mo"></img>
               </div>
@@ -43,7 +43,7 @@ export default function Home() {
           </header>
           <nav className="home__navbar">
             <Link className="linkdiv" to={"#"}>
-              <i onClick={logouthandler} class="fa-solid fa-house"></i>
+              <i class="fa-solid fa-house"></i>
             </Link>
             <Link className="linkdiv" to={"/createorder"}>
               <img src="images/more.svg"></img>

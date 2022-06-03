@@ -70,6 +70,7 @@
   justify-content: center;
   background-color: #5861ae;
   color: white;
+  cursor: pointer;
 }
 .home__header__userinfo > h1 {
   letter-spacing: 1.2px;

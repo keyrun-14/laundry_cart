@@ -121,7 +121,7 @@ app.get("/getOrder", authtoken, async (req, res) => {
       res.status(400).send("user not exist");
       res.end();
     }
-    const result = await orders.find();
+    const result = await orders.findById(req.user.userId);
     res.status(200).json(result);
   } catch (err) {
     res.status(500).send("server error");
@@ -135,7 +135,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/order", (req, res) => {
-  console.log(req.body);
   orders.create(req.body, (err, docs) => {
     if (err) {
       res.send(err);
