@@ -138,10 +138,12 @@ export default function Singleproduct({
             "-"
           ) : (
             <>
-              <p>
+              <p className="singleproduct__Price__div">
                 {quantity} x {totalPrice} ={" "}
               </p>{" "}
-              <h1>{quantity * totalPrice}</h1>
+              <p className="singleproduct__mainPrice__div">
+                {quantity * totalPrice}
+              </p>
             </>
           )}
         </div>

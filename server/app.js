@@ -98,6 +98,20 @@ app.post("/login", async (request, response) => {
     response.end();
   }
 });
+// Get userDetails
+
+app.get("/UserDetails", authtoken, async (req, res) => {
+  try {
+    let user = await usersDatabase.findById(req.user.userId);
+    res.status(200).send(user);
+    res.end();
+  } catch (e) {
+    console.log(e);
+    res.status(500).send("some Internal Server error");
+    res.end();
+  }
+});
+
 ////////////////////////////////////GET ORDERS///////////////////////////////////////////////////
 app.get("/getOrder", authtoken, async (req, res) => {
   try {

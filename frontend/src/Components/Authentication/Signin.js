@@ -23,6 +23,7 @@ export default function () {
       .then((res) => {
         settoken(res.data.token);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("Name", res.data.Name);
         alert("Sign in Successfull");
         console.log(res.data.token);
       })

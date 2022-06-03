@@ -3,6 +3,7 @@ import "./createorder.css";
 import Singleproduct from "../singleproduct/Singleproduct";
 import Summary from "../summary/Summary";
 import Sucessmodal from "../Ordersuccess/Sucessmodal";
+import Home from "../../Home/Home";
 
 export default function Createorder() {
   const customerOrder = {
@@ -17,6 +18,7 @@ export default function Createorder() {
   const [products, setProducts] = React.useState([]);
   const [show, setShow] = React.useState(false);
   const [sucess, setsucess] = React.useState(false);
+  const [userData, setuserData] = React.useState({});
 
   const handleRender = () => {
     setRender(!render);
@@ -28,7 +30,16 @@ export default function Createorder() {
   };
   const handleProceed = () => {
     setShow(!show);
+    fetch("http://localhost:5000/UserDetails", {
+      headers: {
+        authtoken: localStorage.getItem("token"),
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => setuserData(data));
   };
+  console.log(userData);
+
   React.useEffect(() => {
     fetch("http://localhost:5000")
       .then((resp) => resp.json())
@@ -37,6 +48,7 @@ export default function Createorder() {
 
   return (
     <>
+      <Home />
       <div className="createorder__container">
         <div className="createorder__upperbar">
           <h2>Create order</h2>
@@ -76,6 +88,7 @@ export default function Createorder() {
         </div>
       </div>
       <Summary
+        userDetails={userData}
         setShow={setShow}
         setsucess={setsucess}
         customerorder={customerOrder}

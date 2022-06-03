@@ -8,6 +8,7 @@ export default function Summary({
   customerorder,
   setShow,
   setsucess,
+  userDetails,
 }) {
   const [location, setLocation] = useState("store location");
 
@@ -29,6 +30,7 @@ export default function Summary({
     } else {
       customerorder = {
         ...customerorder,
+        userId: userDetails._id,
         location: location,
         totalPrice: totalPrice,
         totalQuantity: totalQuantity,
@@ -150,6 +152,11 @@ export default function Summary({
               className="summary__address summary__address--active"
             >
               <img src="images/tick.svg" alt="tick"></img>
+              <h3>Home</h3>
+              <p>
+                {userDetails.State},{userDetails.District},{userDetails.Adress},
+                {userDetails.Pincode}
+              </p>
             </div>
           </div>
 

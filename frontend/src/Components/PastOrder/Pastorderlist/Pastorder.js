@@ -11,11 +11,14 @@ const Pastorder = () => {
   const [data, setData] = useState([]);
   const [Visible, setVisible] = useState(false);
   const gettingData = async () => {
-    await fetch("http://localhost:5000/getOrder")
+    await fetch("http://localhost:5000/getOrder", {
+      headers: {
+        authtoken: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((datas) => setData(datas));
   };
-  console.log(data);
 
   useEffect(() => {
     gettingData();
@@ -32,6 +35,7 @@ const Pastorder = () => {
 
   return (
     <>
+      <Home />
       {data.length === 0 ? (
         <NoCustomer />
       ) : (

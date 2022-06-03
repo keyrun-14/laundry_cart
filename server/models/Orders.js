@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const ordersSchema = new mongoose.Schema({
   userId: {
-    user: mongoose.Types.ObjectId,
+    type: mongoose.Types.ObjectId,
+    ref: "laundrycartUsers",
   },
   totalQuantity: Number,
   totalPrice: Number,

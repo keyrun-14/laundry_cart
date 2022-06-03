@@ -46,7 +46,10 @@
 .home__header__navigation {
   display: flex;
   width: 161px;
-  justify-content: space-around;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid#E3E3E3; */
 }
 .home__header__navigation > p {
   font-size: 14px;
@@ -54,7 +57,7 @@
   align-items: center;
   color: #565657;
   justify-content: center;
-  height: 60px;
+  height: 74px;
   width: 80.5px;
   border: 1px solid#E3E3E3;
   cursor: pointer;

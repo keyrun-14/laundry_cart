@@ -10,6 +10,7 @@ import axios from "axios";
 export default function Home() {
   const [token, settoken] = useContext(tokenstorage);
   const [userdata, setuserdata] = useState({});
+  const [name, setName] = useState("");
   async function fetchuserdata() {
     await axios.get("http://localhost:5000/userdetails");
   }

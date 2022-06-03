@@ -16,7 +16,7 @@ export default function Sucessmodal({ isVisible, setsucess }) {
           <div className="sucess__check">
             <p>You can track the delivery in the "orders" section</p>
           </div>
-          <Link to="/">
+          <Link to="/pastorders">
             <button
               onClick={() => {
                 setsucess(false);
