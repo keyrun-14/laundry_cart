@@ -2,9 +2,18 @@ import React from "react";
 import "./CancelAlert.css";
 
 export default function CancelAlert({ popup }) {
+  // function deleteOrder(id){
+  //   fetch("http://localhost:5000/deleteOrder/"+id,{
+  //     method:"DELETE",
+  //     mode: 'cors',
+  //     headers:{"content-Type":"application/json",'Access-Control-Allow-Origin':'*'}
+     
+  //   }).then((res)=>console.log(res)).catch(e=>console.log(e))
+  // }
   if (popup) {
     return (
       <>
+    
         <div className="whole">
           <div className="CancelAlert-div">
             <div className="Alert-head">
@@ -20,7 +29,9 @@ export default function CancelAlert({ popup }) {
                   Are you sure want to cancel Order No:{" "}
                 </div>
                 <div className="proceed">
-                  <button className="proceed-button">proceed</button>
+                  <button className="proceed-button"
+                  //  onClick={deleteOrder(customerorder._id)}
+                   >proceed</button>
                 </div>
               </div>
             </div>

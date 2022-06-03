@@ -173,7 +173,7 @@ export default function PastOrderSummary({
           </footer>
         </div>
       </div>
-       <CancelAlert popup={popup} />
+       <CancelAlert popup={popup}  />
        </>
     );
   } else {
