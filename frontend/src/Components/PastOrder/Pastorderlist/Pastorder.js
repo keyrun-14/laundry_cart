@@ -50,16 +50,17 @@ const Pastorder = () => {
     setorderId(id);
   };
   const deleteOrder = () => {
-    fetch("http://localhost:5000/deleteOrder", {
-      method: "POST",
+    fetch("http://localhost:5000/deleteOrder/"+orderId, {
+      method: "DELETE",
       headers: {
         authtoken: localStorage.getItem("token"),
       },
       body: {
         orderId: orderId,
-      },
-    });
-    Navigate("/pastorder");
+      }
+    
+    }).then(()=>window.location.href("/pastorders"));
+    
   };
   return (
     <>
@@ -87,31 +88,31 @@ const Pastorder = () => {
             </div>
             <div className="orders-table-header">
               <div>
-                <h5>Order id</h5>
+                <h6>Order id</h6>
               </div>
               <div>
-                <h5>Order date & time</h5>
+                <h6>Order date & time</h6>
               </div>
               <div>
-                <h5>Store Location</h5>
+                <h6>Store Location</h6>
               </div>
               <div>
-                <h5>City</h5>
+                <h6>City</h6>
               </div>
               <div>
-                <h5>Store Phone</h5>
+                <h6>Store Phone</h6>
               </div>
               <div>
-                <h5>Total items</h5>
+                <h6>Total items</h6>
               </div>
               <div>
-                <h5>Price</h5>
+                <h6>Price</h6>
               </div>
               <div>
-                <h5>Status</h5>
+                <h6>Status</h6>
               </div>
               <div>
-                <h5>View</h5>
+                <h6>View</h6>
               </div>
             </div>
           </>
@@ -126,31 +127,31 @@ const Pastorder = () => {
                   }
                 >
                   <>
-                    <div className="column1">
+                    <div className="column">
                       <p>OROOO{index + 1}</p>
                     </div>
-                    <div className="column2">
+                    <div className="column">
                       <p>12-oct-2021,10:15</p>
                     </div>
-                    <div className="column3">
+                    <div className="column">
                       <p>local</p>
                     </div>
-                    <div className="column4">
+                    <div className="column">
                       <p>{ele.location}</p>
                     </div>
-                    <div className="column5">
+                    <div className="column">
                       <p>+919988667755</p>
                     </div>
-                    <div className="column6">
+                    <div className="column">
                       <p>{ele.totalQuantity}</p>
                     </div>
-                    <div className="column7">
+                    <div className="column">
                       <p>{ele.totalPrice}</p>
                     </div>
-                    <div className="column8">
+                    <div className="column">
                       <p>ready to pickup</p>
                     </div>
-                    <div className="column8">
+                    <div className="column">
                       <p>
                         <i
                           onClick={() => changeHandler(ele._id)}

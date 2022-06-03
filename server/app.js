@@ -147,8 +147,12 @@ app.post("/order", (req, res) => {
     }
   });
 });
-app.post("/deleteOrder", authtoken, (req, res) => {
-  orders.findByIdAndDelete(req.body.orderId, (err, docs) => {
+app.delete("/deleteOrder/:orderId", authtoken, (req, res) => {
+  console.log((req.params.orderId))
+ 
+  // const deletedorder=orders.findById(req.params.orderId)
+  // console.log(deletedorder,"hhh")
+  orders.findByIdAndDelete((req.params.orderId), (err, docs) => {
     if (err) {
       res.send(err);
     } else {

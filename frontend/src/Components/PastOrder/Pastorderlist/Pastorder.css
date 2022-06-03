@@ -53,4 +53,14 @@ p {
 } */
 .details-container1>*{
   text-align: center;
+  width: 128.2px;
+}
+.details-container2>*{
+  text-align: center;
+  width: 128.2px;
+}
+.orders-table-header>*{
+  width:128.2px;
+  text-align: center;
+
 }
