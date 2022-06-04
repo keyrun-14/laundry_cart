@@ -115,3 +115,26 @@
   margin: 20.35px 0;
   /* border: 1px solid white; */
 }
+.logout{
+  list-style-type: none;
+}
+.logout>li{
+  width: 5em;
+  height: 2em;
+
+  padding:0  1em;
+  margin-top: 7em;
+  margin-right: 0em;
+  border-radius: 5px;
+
+  display: none;
+  background-color: red;
+
+}
+.home__header__userinfo:hover .logout>li{
+  display: block;
+}
+.logout>li:hover{
+  font-weight: 700;
+  font-style: italic;
+}

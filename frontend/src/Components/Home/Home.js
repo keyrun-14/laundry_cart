@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 // import Summary from "../CreateOrders/summary/Summary";
 import "./home.css";
+
 import axios from "axios";
 
 export default function Home() {
@@ -34,12 +35,17 @@ export default function Home() {
                 <p>Career</p>
               </div>
             </div>
-            <div onClick={logouthandler} className="home__header__userinfo">
+            <div  className="home__header__userinfo">
               <div className="home__header__userimage">
                 <img src="https://lh3.googleusercontent.com/ogw/ADea4I7Jg1mUhjHMgDuy34nUCvmABKEPG3wOr4p2SzlOsg=s32-c-mo"></img>
               </div>
               <h1>{localStorage.getItem("Name")}</h1>
-            </div>
+              
+              <ul className="logout">
+                <li onClick={logouthandler}>Logout  </li>
+              </ul>
+              </div>
+           
           </header>
           <nav className="home__navbar">
             <Link className="linkdiv" to={"#"}>

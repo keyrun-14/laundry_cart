@@ -43,168 +43,120 @@ export default function () {
         <img src="./images/Footer.jpg" class="float-start"></img>
         <div className="row" style={{ marginTop: "-160px" }}>
           <div className="col-5">
-            <p
-              style={{
-                left: "-100px",
-                position: "relative",
-                fontSize: "18px",
-                color: "#182838",
-              }}
-            >
-              ABOUT US
-            </p>
-          </div>
-          <div className="col-2">
-            <span
-              style={{
-                position: "relative",
-                left: "-60px",
-                color: "#182838",
-                fontSize: "16px",
-              }}
-            >
-              Home
-            </span>
-            <span
-              style={{ marginLeft: "5px", color: "#182838", fontSize: "16px" }}
-            >
-              Pricing
-            </span>
-          </div>
-          <div className="col-2">
-            <span
-              style={{
-                position: "relative",
-                left: "-40px",
-                color: "#182838",
-                fontSize: "16px",
-              }}
-            >
-              Career
-            </span>
-            <span
-              style={{
-                position: "relative",
-                left: "-60px",
-                marginLeft: "50px",
-                color: "#182838",
-                fontSize: "16px",
-              }}
-            >
-              Contact
-            </span>
-          </div>
-          <div className="col-3">
-            <p
-              style={{
-                position: "relative",
-                left: "10px",
-
-                color: "#182838",
-                fontSize: "18px",
-              }}
-            >
-              SOCIAL MEDIA
-            </p>
-          </div>
-        </div>
-        <div className="row" style={{ marginTop: "-120px" }}>
-          <div className="col-5">
-            <p
-              style={{
-                left: "0px",
-                position: "relative",
-                color: "#182838",
-                fontSize: "15px",
-              }}
-            >
-              Doorstep Wash & Dryclean Service
-            </p>
-          </div>
-          <div className="col-2">
-            <span
-              style={{
-                left: "-90px",
-                position: "relative",
-                color: "#182838",
-                fontSize: "14px",
-              }}
-            >
-              Sign In
-            </span>
-          </div>
-          <div className="col-2">
-            <span
-              style={{
-                left: "-95px",
-                position: "relative",
-                color: "#182838",
-                fontSize: "16px",
-              }}
-            >
-              Blogs
-            </span>
-          </div>
-          <div className="col-3">
-            <div className="row">
-              <div className="col-4" style={{}}>
-                <img
-                  src={facebook}
+            <div className="d-flex flex-column">
+              <div className="p-1 justify-content-end ">
+                <p
                   style={{
-                    padding: "5px",
-                    left: "35px",
+                    textAlign: "center",
+                    width: "max-content",
                     position: "relative",
+                    left: "155px",
+                    fontSize: "18px",
+                    color: "#182838",
                   }}
-                ></img>
-                <img
-                  src={instagram}
+                >
+                  ABOUT US
+                </p>
+              </div>
+              <div className="p-1 justify-content-end">
+                <p
                   style={{
-                    padding: "5px",
-                    left: "35px",
-                    position: "relative",
+                    textAlign: "center",
+                    fontSize: "14px",
+                    color: "#3D3D43",
                   }}
-                ></img>
-                <img
-                  src={linkedin}
-                  style={{
-                    padding: "5px",
-                    left: "35px",
-                    position: "relative",
-                  }}
-                ></img>
+                >
+                  {" "}
+                  Doorstep Wash & Dryclean Service
+                </p>
               </div>
             </div>
           </div>
-        </div>
-        <div className="row" style={{ marginTop: "-85px" }}>
-          <div className="col-5"></div>
-          <div className="col-2">
-            <span
-              style={{
-                left: "-90px",
-                position: "relative",
-                color: "#182838",
-                fontSize: "14px",
-              }}
-            >
-              Register
-            </span>
+          <div className="col-2 ">
+            <div className="d-flex justify-content-between">
+              <div className="d-flex flex-column">
+                <div
+                  className="p-1"
+                  style={{ fontSize: "16px", color: "#182838" }}
+                >
+                  Home
+                </div>
+                <div
+                  className="p-1"
+                  style={{ fontSize: "14px", color: "#182838" }}
+                >
+                  Sign In
+                </div>
+                <div
+                  className="p-1"
+                  style={{ fontSize: "14px", color: "#182838" }}
+                >
+                  Register
+                </div>
+              </div>
+              <div className="d-flex flex-column  ">
+                <div
+                  className="p-1  "
+                  style={{ fontSize: "16px", color: "#182838" }}
+                >
+                  Pricing
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="col-2">
-            <span
-              style={{
-                left: "-95px",
-                position: "relative",
-                color: "#182838",
-                fontSize: "16px",
-              }}
-            >
-              Create
-            </span>
+          <div className="col-2 ">
+            <div className="d-flex justify-content-around">
+              <div className="d-flex flex-column">
+                <div
+                  className="p-1"
+                  style={{ fontSize: "16px", color: "#182838" }}
+                >
+                  Career
+                </div>
+                <div
+                  className="p-1"
+                  style={{ fontSize: "14px", color: "#182838" }}
+                >
+                  Blogs
+                </div>
+                <div
+                  className="p-1"
+                  style={{ fontSize: "14px", color: "#182838" }}
+                >
+                  Create
+                </div>
+              </div>
+              <div className="d-flex flex-column">
+                <div
+                  className="p-1"
+                  style={{ fontSize: "16px", color: "#182838" }}
+                >
+                  Contact
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="col-3">
-            <div className="row">
-              <div className="col-4" style={{}}></div>
+          <div className="col-3 ">
+            <div className="d-flex">
+              <div className="d-flex flex-column">
+                <div
+                  className="p-1"
+                  style={{ fontSize: "18px", color: "#182838" }}
+                >
+                  SOCIAL MEDIA
+                </div>
+                <div className="d-flex">
+                  <div className="p-1">
+                    <img src={facebook}></img>
+                  </div>
+                  <div className="p-1">
+                    <img src={instagram}></img>
+                  </div>
+                  <div className="p-1">
+                    <img src={linkedin}></img>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
