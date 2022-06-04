@@ -14,6 +14,7 @@ export default function Createorder() {
     Trousers: {},
     Boxers: {},
   };
+  console.log(customerOrder);
   const [render, setRender] = React.useState(false);
   const [products, setProducts] = React.useState([]);
   const [show, setShow] = React.useState(false);
