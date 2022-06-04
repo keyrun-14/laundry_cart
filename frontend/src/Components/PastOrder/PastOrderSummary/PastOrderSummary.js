@@ -23,7 +23,7 @@ export default function PastOrderSummary({
   if (isVisible) {
     return (
       <>
-        <div className="summary__conatiner">
+        <div className="summary__conatiner1">
           <div className="summary__leftdiv">
             <header className="summary__header">
               <div className="summary__header__innnerdiv">
@@ -32,7 +32,7 @@ export default function PastOrderSummary({
               </div>
             </header>
             <nav className="summary__storeselector">
-              <div>
+              <div className="summary_StoreSelector__leftdiv">
                 <h4>Store location</h4>
                 <p>{customerorder.location}</p>
               </div>
@@ -40,7 +40,7 @@ export default function PastOrderSummary({
                 <h4>Store Address</h4>
                 <p>local</p>
               </div>
-              <div>
+              <div className="summary_StoreSelector__rightdiv">
                 <h4>phone No:</h4>
                 <p>+91-9999999999</p>
               </div>
@@ -56,7 +56,7 @@ export default function PastOrderSummary({
               <span className="track-span">delivered</span>
             </div>
 
-            <div className="summary__orderdetails__container">
+            <div className="summary__orderdetails__container1">
               <div className="summary__heading">
                 <h2>Order details</h2>
               </div>
@@ -118,7 +118,7 @@ export default function PastOrderSummary({
               </div>
             </div>
 
-            <footer className="summary__footer">
+            <footer className="summary__footer1">
               <button onClick={alert_popup} className="cancel">
                 Cancel Order
               </button>
