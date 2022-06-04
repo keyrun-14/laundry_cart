@@ -85,7 +85,7 @@ const Pastorder = () => {
           <>
             <div className="table-order-main-header">
               <div className="table-main-header-data">
-                <h4>
+                <h4 style={{ fontSize: "18px" }}>
                   Orders | <span>{data.length}</span>
                 </h4>
               </div>
@@ -96,37 +96,40 @@ const Pastorder = () => {
                   </Link>
                 </div>
                 <div className="search-bar">
-                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <i
+                    style={{ color: "#a0a0a0" }}
+                    class="fa-solid fa-magnifying-glass"
+                  ></i>
                   <input type="text" />{" "}
                 </div>
               </div>
             </div>
             <div className="orders-table-header">
-              <div>
+              <div className="column">
                 <h6>Order id</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>Order date & time</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>Store Location</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>City</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>Store Phone</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>Total items</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>Price</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>Status</h6>
               </div>
-              <div>
+              <div className="column">
                 <h6>View</h6>
               </div>
             </div>
@@ -171,6 +174,7 @@ const Pastorder = () => {
                         <i
                           onClick={() => changeHandler(ele._id)}
                           class="fa-solid fa-eye"
+                          style={{ cursor: "pointer" }}
                         ></i>
                       </p>
                     </div>
