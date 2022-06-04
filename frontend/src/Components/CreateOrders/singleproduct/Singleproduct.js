@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./singleproduct.css";
 
 export default function Singleproduct({
@@ -6,6 +6,7 @@ export default function Singleproduct({
   description,
   image,
   customerorder,
+  render,
 }) {
   const [quantity, setQuantity] = React.useState(0);
   const [wash, setWash] = React.useState(false);
@@ -64,6 +65,13 @@ export default function Singleproduct({
     washtype: washtype,
     totalPrice: totalPrice,
   };
+  useEffect(() => {
+    setQuantity(0);
+    setWash(false);
+    setBleach(false);
+    setDry(false);
+    setIron(false);
+  }, [render]);
 
   const handleReset = () => {
     setQuantity(0);

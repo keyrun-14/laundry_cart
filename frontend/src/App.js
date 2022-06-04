@@ -11,6 +11,7 @@ import Pastorder from "./Components/PastOrder/Pastorderlist/Pastorder";
 import SignInFullpage from "./Components/Authentication/SignInFullpage";
 import RegisterFullPage from "./Components/Authentication/RegisterFullPage";
 import { createContext, useState } from "react";
+import Welcome from "./Components/Welcomeuser/Welcome";
 export const tokenstorage = createContext();
 function App() {
   const [token, settoken] = useState(null);
@@ -21,7 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<SignInFullpage />}></Route>
             <Route path="/register" element={<RegisterFullPage />}></Route>
-            <Route path="/home" element={<Home />}></Route>
+            <Route path="/home" element={<Welcome />}></Route>
             <Route path="/createorder" element={<Createorder />} />
             <Route path="/pastorders" element={<Pastorder />}></Route>
           </Routes>

@@ -24,10 +24,10 @@ export default function () {
         settoken(res.data.token);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("Name", res.data.Name);
-        alert("Sign in Successfull");
+        // alert("Sign in Successfull");
       })
       .catch((e) => {
-        alert("login failed");
+        alert("Invalid Credentials");
       });
   };
   return (

@@ -16,15 +16,14 @@ export default function Createorder() {
     Boxers: {},
   };
   const navigate = useNavigate();
-  const [render, setRender] = React.useState(false);
+  const [render, setRender] = React.useState(0);
   const [products, setProducts] = React.useState([]);
   const [show, setShow] = React.useState(false);
   const [sucess, setsucess] = React.useState(false);
   const [userData, setuserData] = React.useState({});
 
   const handleRender = () => {
-    setRender(!render);
-    navigate("/home");
+    setRender(render + 1);
   };
 
   const handlesucess = () => {
@@ -70,6 +69,7 @@ export default function Createorder() {
             {products.map((item) => {
               return (
                 <Singleproduct
+                  render={render}
                   show={show}
                   setShow={setShow}
                   key={item.id}
