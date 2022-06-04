@@ -100,7 +100,7 @@ export default function () {
                 className="row"
                 style={{
                   position: "relative",
-                  left: "50px",
+                  left: "80px",
                   top: "250px",
                 }}
               >
@@ -130,7 +130,7 @@ export default function () {
                   background: "#5861AE",
                   height: "195px",
                   position: "relative",
-                  left: "660px",
+                  left: "670px",
                   top: "-95px",
                 }}
               ></div>

@@ -149,11 +149,11 @@ export default function () {
         <button id="register_button">Register</button> */}
               <div
                 style={{
-                  width: "2px",
+                  width: "3px",
                   background: "#5861AE",
                   height: "183px",
                   position: "relative",
-                  left: "325px",
+                  left: "330px",
                   top: "-95px",
                 }}
               ></div>
@@ -172,7 +172,7 @@ export default function () {
                 className="row"
                 style={{
                   position: "relative",
-                  left: "-110px",
+                  left: "0px",
                   top: "50px",
                 }}
               >
@@ -352,7 +352,8 @@ export default function () {
                             type="text"
                             {...register("Pincode")}
                             class="form-control"
-                            id="floatingPincode"
+                            id="floatingPassword"
+                            placeholder="name@example.com"
                             style={{
                               border: "none",
                               borderBottom: "2px #4552c1 solid",
@@ -384,7 +385,7 @@ export default function () {
                       </div>
                     </div>
                     <div className="row mt-3">
-                      <div className="col-12">
+                      <div className="col-12" style={{ textAlign: "center" }}>
                         <input
                           class="form-check-input"
                           type="checkbox"
@@ -407,7 +408,7 @@ export default function () {
                       </div>
                     </div>
                     <div className="row mt-3">
-                      <div className="col-12">
+                      <div className="col-12" style={{ textAlign: "center" }}>
                         <button
                           type="submit"
                           class="btn"
