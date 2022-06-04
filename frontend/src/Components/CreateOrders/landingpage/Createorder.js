@@ -4,6 +4,7 @@ import Singleproduct from "../singleproduct/Singleproduct";
 import Summary from "../summary/Summary";
 import Sucessmodal from "../Ordersuccess/Sucessmodal";
 import Home from "../../Home/Home";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Createorder() {
   const customerOrder = {
@@ -14,7 +15,7 @@ export default function Createorder() {
     Trousers: {},
     Boxers: {},
   };
-  console.log(customerOrder);
+  const navigate = useNavigate();
   const [render, setRender] = React.useState(false);
   const [products, setProducts] = React.useState([]);
   const [show, setShow] = React.useState(false);
@@ -23,6 +24,7 @@ export default function Createorder() {
 
   const handleRender = () => {
     setRender(!render);
+    navigate("/home");
   };
 
   const handlesucess = () => {
@@ -50,40 +52,42 @@ export default function Createorder() {
     <>
       <Home />
       <div className="createorder__container">
-        <div className="createorder__upperbar">
-          <h2>Create order</h2>
-          <div className="searchbar__div">
-            <img src="images/search.svg" alt="search"></img>{" "}
-            <input className="searchbar" type={"text"}></input>
+        <div className="createorder__insidecontainer">
+          <div className="createorder__upperbar">
+            <h2>Create order</h2>
+            <div className="searchbar__div">
+              <img src="images/search.svg" alt="search"></img>{" "}
+              <input className="searchbar" type={"text"}></input>
+            </div>
           </div>
-        </div>
-        <div className="Container">
-          <header className="Container__header">
-            <div className="Container__header1">Product Types</div>
-            <div className="Container__header2">Quantity</div>
-            <div className="Container__header3">Wash Type</div>
-            <div className="Container__header4">Price</div>
-          </header>
-          {products.map((item) => {
-            return (
-              <Singleproduct
-                show={show}
-                setShow={setShow}
-                key={item.id}
-                {...item}
-                customerorder={customerOrder}
-              ></Singleproduct>
-            );
-          })}
-        </div>
-        <div className="createorder__buttons">
-          <div className="createorder__buttons__div">
-            <button onClick={handleRender} className="cancel">
-              Cancel
-            </button>
-            <button onClick={handleProceed} className="proceed">
-              Proceed
-            </button>
+          <div className="Container">
+            <header className="Container__header">
+              <div className="Container__header1">Product Types</div>
+              <div className="Container__header2">Quantity</div>
+              <div className="Container__header3">Wash Type</div>
+              <div className="Container__header4">Price</div>
+            </header>
+            {products.map((item) => {
+              return (
+                <Singleproduct
+                  show={show}
+                  setShow={setShow}
+                  key={item.id}
+                  {...item}
+                  customerorder={customerOrder}
+                ></Singleproduct>
+              );
+            })}
+          </div>
+          <div className="createorder__buttons">
+            <div className="createorder__buttons__div">
+              <button onClick={handleRender} className="cancel">
+                Cancel
+              </button>
+              <button onClick={handleProceed} className="proceed">
+                Proceed
+              </button>
+            </div>
           </div>
         </div>
       </div>
