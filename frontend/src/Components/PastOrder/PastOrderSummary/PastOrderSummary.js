@@ -5,20 +5,20 @@ export default function PastOrderSummary({
   isVisible,
   changeHandler,
   alert_popup,
-  id,
+  customerorder,
 }) {
-  const [customerorder, setcustomerorder] = useState({});
+  // const [customerorder, setcustomerorder] = useState({});
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/order/${id}`, {
-      method: "GET",
-      headers: {
-        authtoken: localStorage.getItem("token"),
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setcustomerorder(data));
-  });
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/order/${id}`, {
+  //     method: "GET",
+  //     headers: {
+  //       authtoken: localStorage.getItem("token"),
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setcustomerorder(data));
+  // });
 
   if (isVisible) {
     return (
@@ -119,7 +119,7 @@ export default function PastOrderSummary({
             </div>
 
             <footer className="summary__footer">
-              <button onClick={() => alert_popup(id)} className="cancel">
+              <button onClick={alert_popup} className="cancel">
                 Cancel Order
               </button>
             </footer>

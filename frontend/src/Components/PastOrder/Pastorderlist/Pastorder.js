@@ -16,6 +16,7 @@ const Pastorder = () => {
   const [popup, setPopup] = React.useState(false);
   const [orderId, setorderId] = React.useState("");
   const [counter, setCounter] = React.useState(0);
+  const [customerorder, setcustomerorder] = useState({});
 
   const alert_popup = (id) => {
     setPopup(true);
@@ -33,6 +34,7 @@ const Pastorder = () => {
       .then((res) => res.json())
       .then((datas) => setData(datas));
   };
+
   const deleteOrder = () => {
     setCounter(counter + 1);
     fetch("http://localhost:5000/deleteOrder/" + orderId, {
@@ -63,6 +65,14 @@ const Pastorder = () => {
   const changeHandler = (id) => {
     setVisible(!Visible);
     setorderId(id);
+    fetch(`http://localhost:5000/order/${id}`, {
+      method: "GET",
+      headers: {
+        authtoken: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setcustomerorder(data));
   };
 
   return (
@@ -170,7 +180,7 @@ const Pastorder = () => {
             })}
           </>
           <PastOrderSummary
-            id={orderId}
+            customerorder={customerorder}
             alert_popup={alert_popup}
             isVisible={Visible}
             setVisible={setVisible}
