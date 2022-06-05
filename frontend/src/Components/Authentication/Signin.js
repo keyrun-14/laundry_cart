@@ -22,7 +22,7 @@ export default function () {
       .post("http://localhost:5000/login", data)
       .then((res) => {
         settoken(res.data.token);
-        localStorage.setItem("token", res.data.token);
+        // localStorage.setItem("token", res.data.token);
         localStorage.setItem("Name", res.data.Name);
         // alert("Sign in Successfull");
       })
